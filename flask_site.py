@@ -11,8 +11,15 @@ app = Flask(__name__)
 
 os.system(f'start "" {config.rssh_command} {config.rssh_domain_kw}{config.rssh_domain} {config.rssh_port}')
 
+num_site_visits = 0
+
 # os.system(f"{config.http_server_hosting_cmd}")
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    # num_site_visits += 1
+    return f"Hello PRISM"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
